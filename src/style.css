@@ -3,3 +3,11 @@ body {
     display: grid;
     grid-template-rows: 1fr 5fr 1fr;
 }
+header {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+header > div {
+    margin: 5px;
+}
