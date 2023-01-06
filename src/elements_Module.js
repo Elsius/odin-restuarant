@@ -9,3 +9,5 @@ export function component(element, id, classesArray) {
     }
     return elementObject
 }
+
+//expand this to create div sections?
