@@ -9,7 +9,7 @@ export function header() {
         bannerLogo = component('img');
 
     //banner
-    bannerLogo.src = "test"
+    bannerLogo.src = "bannerLogo"
     //buttons
     childElements[0].innerText = 'Home';
     childElements[1].innerText = 'Menu';
