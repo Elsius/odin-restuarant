@@ -1,4 +1,4 @@
-import { component } from "./elements_Module";
+import { component , menuItem } from "./elements_Module";
 
 function contentHome() {
     const homePage = component('content', 'homepage', ['page']),
@@ -23,9 +23,14 @@ function contentHome() {
 
 function contentMenu() {
     const menuPage = component('content', '', ['page']),
-        headingBanner = component('img')
+        headingBanner = component('img'),
+        item1 = new menuItem('froot','9','tasty','./froot.jpg').exportHtml();
         
 
+menuPage.appendChild(item1)
+    menuPage.appendChild(headingBanner)
+
+return menuPage
 }
 
-export { contentHome, }
+export { contentHome, contentMenu}

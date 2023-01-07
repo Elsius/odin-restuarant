@@ -29,3 +29,8 @@ content {
     flex-direction: column;
     align-items: center;
 }
+
+.itemhead {
+    display: flex;
+    justify-content: space-between;
+}
