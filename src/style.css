@@ -34,3 +34,12 @@ content {
     display: flex;
     justify-content: space-between;
 }
+.contentBox {
+    display: flex;
+    flex-direction: column;
+}
+.page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

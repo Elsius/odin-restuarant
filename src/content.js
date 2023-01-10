@@ -1,7 +1,7 @@
 import { component , menuItem } from "./elements_Module";
 
 function contentHome() {
-    const homePage = component('content', 'homepage', ['page']),
+    const homePage = component('content', 'main', ['page']),
         headingBanner = component('img'),
         pageDesc = component('div', '', ['contentBox']),
         storeHours = component('div', '', ['contentBox']),
@@ -22,15 +22,28 @@ function contentHome() {
 }
 
 function contentMenu() {
-    const menuPage = component('content', '', ['page']),
+    const menuPage = component('content', 'main', ['page']),
         headingBanner = component('img'),
-        item1 = new menuItem('froot','9','tasty','./froot.jpg').exportHtml();
+        item1 = new menuItem('froot','$9','tasty froot','./froot.jpg'),
+        item2 = new menuItem('bread', '$5', 'its buhred!','./bread.jpg');
         
 
-menuPage.appendChild(item1)
-    menuPage.appendChild(headingBanner)
+
+        menuPage.appendChild(headingBanner)
+        menuPage.appendChild(item1.exportHtml())
+        menuPage.appendChild(item2.exportHtml())
 
 return menuPage
 }
+function contentContacts(){
+    const contactsPage = component('content','main',['page']),
+    headingBanner = component('img'),
+    contact1 = new menuItem('Prinny','','super brave hero \n (123) 456-7890');
 
-export { contentHome, contentMenu}
+
+
+    contactsPage.appendChild(headingBanner)
+    contactsPage.appendChild(contact1.exportHtml())
+    return contactsPage
+}
+export { contentHome, contentMenu, contentContacts }
