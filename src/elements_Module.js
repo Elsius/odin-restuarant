@@ -1,9 +1,16 @@
+//psuedo
+//we will initialize the page on index, then when clicking a button there, it clears the <content> element
+//after clearing, create new object filled with page details
+//export object info to html and append it to <content>
+
+
+
 //this is currently poorly written. It could be redone by passing an object instead so
 //we can properly skip arguments in the component function
 function component(element, id, classesArray) { 
 let elementObject = document.createElement(element);
 
-    if (id != undefined) {
+    if (id != undefined && id != '') {
         elementObject.setAttribute('id', id)
     }
     if (classesArray != undefined) {

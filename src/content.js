@@ -1,7 +1,7 @@
 import { component , menuItem } from "./elements_Module";
 
 function contentHome() {
-    const homePage = component('content', 'main', ['page']),
+    const homePage = component('div', '', ['page']),
         headingBanner = component('img'),
         pageDesc = component('div', '', ['contentBox']),
         storeHours = component('div', '', ['contentBox']),
@@ -22,7 +22,7 @@ function contentHome() {
 }
 
 function contentMenu() {
-    const menuPage = component('content', 'main', ['page']),
+    const menuPage = component('div', '', ['page']),
         headingBanner = component('img'),
         item1 = new menuItem('froot','$9','tasty froot','./froot.jpg'),
         item2 = new menuItem('bread', '$5', 'its buhred!','./bread.jpg');
@@ -36,7 +36,7 @@ function contentMenu() {
 return menuPage
 }
 function contentContacts(){
-    const contactsPage = component('content','main',['page']),
+    const contactsPage = component('div','',['page']),
     headingBanner = component('img'),
     contact1 = new menuItem('Prinny','','super brave hero \n (123) 456-7890');
 
@@ -46,4 +46,6 @@ function contentContacts(){
     contactsPage.appendChild(contact1.exportHtml())
     return contactsPage
 }
+
+
 export { contentHome, contentMenu, contentContacts }

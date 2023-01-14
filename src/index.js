@@ -1,6 +1,6 @@
 import { component } from './elements_Module';
 import './style.css'
-import {header} from './header'
+import { header } from './header'
 import { contentHome, contentMenu, contentContacts } from './content';
 //psuedo
 //init, imports original page, header, main content etc
@@ -8,10 +8,25 @@ import { contentHome, contentMenu, contentContacts } from './content';
 //import that page's contents after clearing
 
 //build initial page
-const mainContent = contentHome(),
-    headerDiv = header(),
-    footer = component('footer');
-document.body.appendChild(headerDiv)
-document.body.appendChild(mainContent)
-document.body.appendChild(footer)
+document.body.appendChild(header())
+document.body.appendChild(document.createElement('content'))
+document.body.appendChild(component('footer'))
+
+const content = document.getElementsByTagName('content')[0],
+    navHome = document.getElementById('home'),
+    navMenu = document.getElementById('menu'),
+    navContact = document.getElementById('contact'),
+    footer = document.getElementsByTagName('footer')[0];
+content.appendChild(contentHome())
 footer.innerText = 'footer'
+
+//header functionality
+function changePage(page) {
+    content.innerText = ''
+    content.appendChild(page())
+}
+navHome.addEventListener('click', () => changePage(contentHome))
+navMenu.addEventListener('click', () => changePage(contentMenu))
+navContact.addEventListener('click', () => changePage(contentContacts))
+
+
